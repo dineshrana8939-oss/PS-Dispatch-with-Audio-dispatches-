@@ -5,6 +5,8 @@ Hi everyone,
 I’m not a coder and I’m still new to GitHub, but I wanted to experiment and try something using AI. Based on **PS-Dispatch**, I created a small modification that adds **custom audio dispatch** and some additional functionality to improve emergency response experience.
 
 ---
+Streamable Video for the showcase
+[Link](https://streamable.com/lbj1pb)
 
 ## 🙏 Credits
 I do **not** claim any ownership   
