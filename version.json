@@ -1,0 +1,31 @@
+{
+    "name": "ps-dispatch-audio",
+    "version": "1.0.0",
+    "description": "PS-Dispatch with Custom Audio Dispatch Alerts - A free FiveM dispatch system",
+    "author": "Community (Original concept by Project Sloth)",
+    "repository": "https://github.com/dineshrana8939-oss/PS-Dispatch-with-Audio-dispatches-",
+    "license": "MIT",
+    "fivem": {
+        "fx_version": "cerulean",
+        "game": "gta5",
+        "lua54": true
+    },
+    "features": [
+        "Custom audio alerts per dispatch type",
+        "17 pre-configured dispatch codes",
+        "QBCore and ESX framework support",
+        "Standalone mode available",
+        "InteractSound integration",
+        "GPS blips with auto-cleanup",
+        "Job-based filtering",
+        "Admin test commands with ACE permissions"
+    ],
+    "requirements": {
+        "fivem": "Artifact 3000 or higher",
+        "optional": [
+            "qb-core",
+            "es_extended",
+            "interact-sound"
+        ]
+    }
+}
