@@ -2,18 +2,37 @@
 
 Hi everyone,
 
-I’m not a coder and I’m still new to GitHub, but I wanted to experiment and try something using AI. Based on **PS-Dispatch**, I created a small modification that adds **custom audio dispatch** to the existing dispatch notifications.
+I’m not a coder and I’m still new to GitHub, but I wanted to experiment and try something using AI. Based on **PS-Dispatch**, I created a small modification that adds **custom audio dispatch** and some additional functionality to improve emergency response experience.
 
 ---
 
 ## 🙏 Credits
 I do **not** claim any ownership of PS-Dispatch.  
 Full credit goes to **PS Sloth** for the original resource.  
-This release only adds custom audio support on top of the existing system.
+This release only adds custom features on top of the existing system.
 
 ---
 
 ## ✨ Features
+
+### 📍 Dead Player Tracking
+- Shows the location where a player died
+- If someone carries/moves the dead player, the **blip updates dynamically**
+- Blip moves from original death location → current position of the dead player
+
+---
+
+### 🚑 EMS Response Notification to Civilian
+- Notifies the civilian if **EMS is responding to their dispatch**
+- When EMS accepts/responds → civilian receives a small dispatch notification: **"EMS is on the way"**
+- Works for:
+  - Normal death dispatch
+  - `/311` and `/311a` help requests
+- Civilian gets confirmation only when EMS actually responds
+
+---
+
+### 🎧 Custom Audio Dispatch
 - Plays custom `.ogg` audio along with normal PS-Dispatch alerts  
 - Easy to add your own dispatch sounds  
 - Includes admin test commands for quick verification  
@@ -25,7 +44,7 @@ This release only adds custom audio support on top of the existing system.
 
 ### 1. Add the provided files
 Add these files to your **test server first** and verify everything works.  
-(Audio dispatch has been tested and is working.)
+(All features including audio and tracking have been tested.)
 
 ---
 
@@ -58,7 +77,7 @@ Change the sound name to match your `.ogg` file.
 
 ## 🧪 Testing
 
-You can test **all dispatch audio at once** using admin commands,  
+You can test **all dispatch audio and features at once** using admin commands,  
 or test normally by triggering events in-game.
 
 ---
@@ -134,7 +153,7 @@ You can also test using another player:
 
 - Join as **Police (PD)** or **EMS**
 - Trigger real in-game events (robbery, shots fired, distress, etc.)
-- Audio dispatch should play automatically
+- Audio dispatch and EMS response system should trigger automatically
 
 ---
 
@@ -142,17 +161,20 @@ You can also test using another player:
 - Use **.ogg format only**
 - Keep audio short and optimized
 - File names must match exactly in config and fxmanifest
-- This is a simple customization built on top of PS-Dispatch
+- Dead player tracking updates automatically when body is moved
+- Civilian receives EMS confirmation only when EMS responds
+- This is a customization built on top of PS-Dispatch
 
 ---
 
 ## 🚀 Future Improvements (Optional)
 - Auto audio mapping
 - Priority-based dispatch sounds
-- Radio-style effects
+- Radio-style audio effects
 - Volume / distance control
 - Full dispatch audio pack
+- UI indicator for EMS tracking
 
 Feel free to improve and expand this resource.
 
-Enjoy 🎧🚓
+Enjoy 🎧🚓🚑
