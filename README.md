@@ -7,8 +7,10 @@ I’m not a coder and I’m still new to GitHub, but I wanted to experiment and 
 ---
 
 ## 🙏 Credits
-I do **not** claim any ownership of PS-Dispatch.  
-Full credit goes to **PS Sloth** for the original resource.  
+I do **not** claim any ownership   
+Full credit goes to **PS Sloth** for the original resource. 
+https://github.com/Project-Sloth
+
 This release only adds custom features on top of the existing system.
 
 ---
