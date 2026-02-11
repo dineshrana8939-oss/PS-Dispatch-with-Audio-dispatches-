@@ -1,0 +1,9 @@
+# Git ignore file
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.vscode/
+.idea/
+*.bak
+*~

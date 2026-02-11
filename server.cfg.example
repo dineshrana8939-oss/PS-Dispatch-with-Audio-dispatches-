@@ -1,0 +1,25 @@
+# ================================
+# PS-Dispatch Audio Configuration
+# ================================
+#
+# Add these lines to your server.cfg file
+#
+
+# Start the resource
+ensure ps-dispatch-audio
+
+# Grant admin permission to use test commands
+# This allows admins to test dispatch alerts
+add_ace group.admin command.ps-dispatch-test allow
+
+# Optional: Grant specific players test command access
+# add_ace identifier.license:YOUR_LICENSE command.ps-dispatch-test allow
+
+# ================================
+# Optional InteractSound Setup
+# ================================
+# If you use InteractSound for better audio:
+# 1. Copy audio files from ps-dispatch-audio/sounds/ to interact-sound/client/html/sounds/
+# 2. Ensure InteractSound loads before ps-dispatch-audio:
+#    ensure interact-sound
+#    ensure ps-dispatch-audio
