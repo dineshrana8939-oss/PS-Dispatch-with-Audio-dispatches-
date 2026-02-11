@@ -123,14 +123,18 @@ local function RegisterTestCommands()
             return
         end
         
-        local code = args[1]:upper()
+        local code = args[1]
+        -- Try both original case and uppercase for flexibility
         if not Config.DispatchCodes[code] then
-            TriggerClientEvent('chat:addMessage', source, {
-                color = {255, 0, 0},
-                multiline = true,
-                args = {'[PS-Dispatch]', 'Invalid dispatch code: ' .. code}
-            })
-            return
+            code = code:upper()
+            if not Config.DispatchCodes[code] then
+                TriggerClientEvent('chat:addMessage', source, {
+                    color = {255, 0, 0},
+                    multiline = true,
+                    args = {'[PS-Dispatch]', 'Invalid dispatch code: ' .. args[1]}
+                })
+                return
+            end
         end
         
         TriggerClientEvent('ps-dispatch-audio:client:TestDispatch', source, code)
@@ -139,7 +143,7 @@ end
 
 -- Register commands on resource start
 Citizen.CreateThread(function()
-    Wait(1000) -- Wait for config to load
+    -- Commands are registered immediately since config is loaded via shared_scripts
     RegisterTestCommands()
     print('^2[PS-Dispatch-Audio]^7 Test commands registered. Use /ps-dispatch-test <code> to test')
 end)

@@ -2,6 +2,8 @@ local QBCore = nil
 local ESX = nil
 local PlayerJob = nil
 local ActiveDispatches = {}
+local BlipIdCounter = 0
+local MAX_BLIP_ID = 999999 -- Prevent overflow on long-running servers
 
 -- Framework Detection
 Citizen.CreateThread(function()
@@ -90,8 +92,12 @@ function CreateDispatchBlip(data)
     AddTextComponentString(data.displayCode .. ' - ' .. data.description)
     EndTextCommandSetBlipName(blip)
     
-    -- Store blip reference
-    local blipId = #ActiveDispatches + 1
+    -- Store blip reference using counter with overflow protection
+    BlipIdCounter = BlipIdCounter + 1
+    if BlipIdCounter > MAX_BLIP_ID then
+        BlipIdCounter = 1
+    end
+    local blipId = BlipIdCounter
     ActiveDispatches[blipId] = blip
     
     -- Remove blip after configured time
